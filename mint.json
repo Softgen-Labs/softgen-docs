@@ -51,6 +51,15 @@
           ]   
     },
     {
+      "group": "User Guides",
+      "pages": [
+        "guides/getting-started",
+        "guides/step-by-step",
+        "guides/prompting",
+        "guides/deployment"
+      ]
+    },
+    {
       "group": "Plans & Pricing",
       "pages": [
         "plans/understanding-tokens",
