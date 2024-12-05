@@ -60,6 +60,13 @@
       ]
     },
     {
+      "group": "Integrations",
+      "pages": [
+        "integrations/github-integration",
+        "integrations/firebase-integration"
+      ]
+    },
+    {
       "group": "Plans & Pricing",
       "pages": [
         "plans/understanding-tokens",
