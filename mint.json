@@ -40,22 +40,29 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+     
+          "group": "Introduction",
+          "pages": [
+            "introduction/welcome",
+            "introduction/capabilities",
+            "introduction/quick-start",
+            "introduction/stay-connected",
+            "introduction/support"
+          ]   
+    },
+    {
+      "group": "Plans & Pricing",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "plans/understanding-tokens",
+        "plans/pricing-plans",
+        "plans/features-comparison"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Resources",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "resources/how-it-works",
+        "resources/faq"
       ]
     }
   ],
