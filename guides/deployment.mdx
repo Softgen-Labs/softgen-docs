@@ -1,176 +1,25 @@
 ---
 title: 'Deployment with Vercel'
-description: 'A comprehensive guide to seamless application deployment for Softgen projects'
+description: 'Comprehensive guide to deploying Softgen projects on Vercel'
 ---
 
-## Deployment Made Simple: Softgen & Vercel
+import { Callout } from 'nextra-theme-docs'
 
-Vercel transforms deployment from a complex process to a seamless, one-click experience. Whether you're launching a startup MVP or scaling an enterprise application, our integration ensures a smooth path from development to production.
+## Quick Deploy Methods
 
-### One-Click Deployment: Zero to Live in Minutes
+### Dashboard Deployment
+1. Open the Softgen project dashboard
+2. Navigate to the Deployment section
+3. Click "Deploy with Vercel"
+4. Login to your Vercel account
+5. Wait for automatic deployment (1-2 minutes)
+6. Access your live project URL
 
-#### Softgen Dashboard Deployment
-1. **Navigate to Project**
-   - Open your project in Softgen dashboard
-   - Locate "Deployment" section
+### One-Click Publish
+<Callout type="info">
+  Simplest method for instant deployment
+</Callout>
 
-2. **Vercel Integration**
-   - Click "Deploy" button
-   - Select "Deploy with Vercel"
-   - Authenticate your Vercel account
-
-3. **Automatic Configuration**
-   - Vercel detects your project framework
-   - Automatically sets up optimal build settings
-   - Generates preview and production environments
-
-4. **Deployment in Progress**
-   - Watch real-time deployment logs
-   - Typical deployment takes 1-2 minutes
-   - Receive instant live URL notification
-
-## Advanced Deployment Strategies
-
-### Using Personal Vercel Account
-
-#### Prerequisites
-- Active Vercel account
-- Project repository (GitHub/GitLab/Bitbucket)
-- Vercel CLI (optional but recommended)
-
-#### Step-by-Step Configuration
-
-1. **Vercel API Token Management**
-   ```bash
-   # Generate Vercel Token
-   $ vercel login
-   $ vercel token create
-
-   # Project Settings Configuration
-   1. Navigate to "Deployment Settings"
-   2. Select "Manual Token Configuration"
-   3. Paste generated API token
-   ```
-
-2. **Custom Domain Setup**
-   - Open Vercel Dashboard
-   - Select Project
-   - Navigate to "Domains"
-   - Add custom domain
-   
-   **DNS Configuration Checklist:**
-   - Create CNAME record
-   - Point to `cname.vercel-dns.com`
-   - Verify domain ownership
-   - Wait for automatic SSL provisioning
-
-3. **Environment Variable Management**
-   ```bash
-   # Recommended Approach
-   $ vercel env add
-   
-   # Add environment-specific variables
-   - Development
-   - Preview
-   - Production
-   ```
-
-### Deployment Best Practices
-
-#### Build Configuration
-- Use `vercel.json` for advanced configurations
-- Specify build commands
-- Define route redirects
-- Configure headers
-
-**Example `vercel.json`:**
-```json
-{
-  "version": 2,
-  "builds": [
-    { "src": "package.json", "use": "@vercel/next" }
-  ],
-  "routes": [
-    { "src": "/about", "dest": "/about-us" }
-  ]
-}
-```
-
-#### Continuous Deployment
-- Connect GitHub/GitLab repositories
-- Automatic deployments on push
-- Preview environments for pull requests
-
-### Performance Optimization
-
-1. **Caching Strategies**
-   - Leverage Vercel's global CDN
-   - Implement intelligent caching
-   - Use `Cache-Control` headers
-
-2. **Serverless Functions**
-   - Optimize Lambda execution
-   - Minimize cold start times
-   - Use edge functions for global performance
-
-### Monitoring & Debugging
-
-#### Deployment Insights
-- Real-time performance metrics
-- Detailed deployment logs
-- Error tracking
-- Rollback capabilities
-
-## Troubleshooting Common Issues
-
-### Deployment Failures
-- Check build logs
-- Verify environment variables
-- Ensure compatible Node.js version
-- Review framework-specific configurations
-
-### Domain Configuration
-- Propagation can take 24-48 hours
-- Verify DNS settings
-- Check SSL certificate status
-
-## Security Considerations
-
-- Use strong, unique API tokens
-- Rotate tokens periodically
-- Limit token permissions
-- Enable two-factor authentication
-
-## CLI Deployment Workflow
-
-```bash
-# Quick Deployment
-$ vercel
-
-# Production Deployment
-$ vercel --prod
-
-# Preview Deployment
-$ vercel preview
-```
-
-## Recommended Workflow
-
-1. Local Development
-2. Commit to Version Control
-3. Automatic Preview Deployments
-4. Manual Production Trigger
-5. Continuous Monitoring
-
-**Pro Tip:** Always maintain separate environments with distinct configurations for development, staging, and production.
-
-## Support & Resources
-
-- [Vercel Documentation](https://vercel.com/docs)
-- Softgen Support Channel
-- Community Forums
-- Deployment Troubleshooting Guide
-
----
-
-Deployment is more than a technical step—it's your application's first impression. Leverage Softgen and Vercel to make it flawless.
+- In your project page, click the "Publish" button
+- Platform handles automatic deployment
+- Receive instant live URL
