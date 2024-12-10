@@ -40,23 +40,43 @@
   ],
   "navigation": [
     {
-     
-          "group": "Introduction",
-          "pages": [
-            "introduction/welcome",
-            "introduction/capabilities",
-            "introduction/quick-start",
-            "introduction/stay-connected",
-            "introduction/support"
-          ]   
+      "group": "Introduction",
+      "pages": [
+        "introduction/welcome",
+        "introduction/capabilities",
+        "introduction/quick-start",
+        "introduction/stay-connected",
+        "introduction/support"
+      ]
     },
     {
       "group": "User Guides",
       "pages": [
         "guides/getting-started",
         "guides/step-by-step",
-        "guides/prompting",
+        "guides/prompting/basic-prompting",
+        "guides/prompting/advanced-prompting",
         "guides/deployment"
+      ]
+    },
+    {
+      "group": "Developer Tools",
+      "pages": [
+        "developer-tools/network-debugging",
+        "developer-tools/console-debugging",
+        "developer-tools/frontend-vs-fullstack"
+      ]
+    },
+    {
+      "group": "Full Stack Development",
+      "pages": [
+        "fullstack/user-authentication",
+        "fullstack/database-operations",
+        "fullstack/realtime-applications",
+        "fullstack/file-storage",
+        "fullstack/user-permissions",
+        "fullstack/stripe-payments",
+        "fullstack/email-integration"
       ]
     },
     {
@@ -79,6 +99,14 @@
       "pages": [
         "resources/how-it-works",
         "resources/faq"
+      ]
+    },
+    {
+      "group": "Best Practices",
+      "pages": [
+        "best-practices/tips-and-tricks",
+        "best-practices/common-pitfalls",
+        "best-practices/optimization-guide"
       ]
     }
   ],
