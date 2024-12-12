@@ -70,6 +70,7 @@
     {
       "group": "Full Stack Development",
       "pages": [
+        "fullstack/firebase-onboarding",
         "fullstack/user-authentication",
         "fullstack/database-operations",
         "fullstack/realtime-applications",

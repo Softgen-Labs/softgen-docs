@@ -1,0 +1,180 @@
+---
+title: 'Firebase Onboarding'
+description: 'Step-by-step guide to setting up Firebase in your Full Stack project'
+---
+
+This guide walks you through the process of integrating Firebase into your Full Stack project. The onboarding process consists of five key steps, each designed to ensure proper setup and configuration of Firebase services.
+
+## Step 1: Add Firebase Project
+
+{/* Video iframe for project creation */}
+<iframe
+  src="https://customer-02msh2c69dn787w3.cloudflarestream.com/8c9f7ba5be77c57ff65c545df94dff4a/iframe"
+  style={{
+    width: '100%', 
+    aspectRatio: '16/9'
+  }}
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowFullScreen={true}
+/>
+
+### Instructions:
+1. Go to the [Firebase Console](https://console.firebase.google.com/)
+2. Click on "Add project"
+3. Give your project a name
+4. Choose whether to enable Google Analytics (optional)
+5. Accept the Firebase terms
+6. Click "Create project"
+7. Wait for project setup to complete
+
+## Step 2: Setup Firebase Client SDK
+
+{/* Video iframe for SDK setup */}
+<iframe
+  src="https://customer-02msh2c69dn787w3.cloudflarestream.com/ba0563dbb88afd6d5fa0f25cd4790bba/iframe"
+  style={{
+    width: '100%', 
+    aspectRatio: '16/9'
+  }}
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowFullScreen={true}
+/>
+
+### Instructions:
+1. In Firebase Console, go to Project settings (gear icon)
+2. In the "Your apps" section, click the web icon (`</>`)
+3. Register your app with a nickname
+4. Copy the Firebase configuration object
+5. Paste the configuration in the provided field
+
+### Configuration Example:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "your-sender-id",
+  appId: "your-app-id"
+};
+```
+
+## Step 3: Setup Firebase Services
+
+{/* Video iframe for services setup */}
+<iframe
+  src="https://customer-02msh2c69dn787w3.cloudflarestream.com/3857233258bf68714ec6a5e921cd07ea/iframe"
+  style={{
+    width: '100%', 
+    aspectRatio: '16/9'
+  }}
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowFullScreen={true}
+/>
+
+### Required Services:
+- Authentication
+- Firestore
+- Realtime Database
+- Storage
+
+### Instructions:
+1. Navigate to each service in Firebase Console
+2. Follow the activation prompts
+3. Configure initial settings
+4. Verify service activation
+
+## Step 4: Setup Service Account
+
+{/* Video iframe for service account setup */}
+<iframe
+  src="https://customer-02msh2c69dn787w3.cloudflarestream.com/2e7ec015cca3d62624a74c43b7021c6e/iframe"
+  style={{
+    width: '100%', 
+    aspectRatio: '16/9'
+  }}
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowFullScreen={true}
+/>
+
+### Instructions:
+1. Go to Project settings > Service accounts
+2. Click "Generate new private key"
+3. Save the JSON file securely
+4. Copy the Firebase Admin SDK initialization snippet
+5. Upload the service account JSON file
+
+### Admin SDK Example:
+
+```javascript
+const admin = require('firebase-admin');
+const serviceAccount = require('path/to/serviceAccountKey.json');
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://your-project.firebaseio.com"
+});
+```
+
+## Step 5: IAM Service Account Setup
+
+{/* Video iframe for IAM setup */}
+<iframe
+  src="https://customer-02msh2c69dn787w3.cloudflarestream.com/19d0f4a234e870a285c7cf978f469117/iframe"
+  style={{
+    width: '100%', 
+    aspectRatio: '16/9'
+  }}
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowFullScreen={true}
+/>
+
+### Required Roles:
+- Firebase Admin
+- Firebase Authentication Admin
+- Cloud Datastore User
+- Storage Admin
+
+### Instructions:
+1. Access IAM & Admin page
+2. Locate your service account
+3. Edit permissions (pencil icon)
+4. Add required roles
+5. Save changes
+
+## Important Notes
+
+- Complete all steps in order
+- Verify each service activation
+- Ensure proper IAM permissions
+- Keep service account JSON secure
+- Test configuration before deployment
+
+## Troubleshooting
+
+### Common Issues:
+1. **Service Account Permissions**
+   - Verify all required roles are assigned
+   - Check IAM permissions page
+
+2. **Configuration Errors**
+   - Double-check Firebase config object
+   - Verify service account JSON format
+
+3. **Service Activation**
+   - Confirm all required services are enabled
+   - Check Firebase Console for any alerts
+
+## Next Steps
+
+After completing the Firebase onboarding:
+1. Test authentication flows
+2. Set up database rules
+3. Configure storage permissions
+4. Implement real-time features
+
+For detailed guides on using specific Firebase features, refer to:
+- [User Authentication](/fullstack/user-authentication)
+- [Database Operations](/fullstack/database-operations)
+- [Real-time Applications](/fullstack/realtime-applications)
+- [File Storage](/fullstack/file-storage)
