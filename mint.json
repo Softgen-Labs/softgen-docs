@@ -28,7 +28,7 @@
 
     {
       "name": "Community",
-      "icon": "slack",
+      "icon": "discord",
       "url": "https://discord.gg/MCUZhuEk"
     },
     {
@@ -100,8 +100,7 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/softgenai",
-    "github": "https://github.com/softgenai",
+    "discord": "https://discord.gg/MCUZhuEk",
     "linkedin": "https://linkedin.com/company/softgenai"
   }
 }
