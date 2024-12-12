@@ -1,5 +1,4 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "Softgen.ai",
   "logo": {
     "dark": "/logo/Logo-white.svg",
@@ -75,16 +74,13 @@
         "fullstack/database-operations",
         "fullstack/realtime-applications",
         "fullstack/file-storage",
-        "fullstack/user-permissions",
-        "fullstack/stripe-payments",
-        "fullstack/email-integration"
+        "fullstack/stripe-payments"
       ]
     },
     {
       "group": "Integrations",
       "pages": [
-        "integrations/github-integration",
-        "integrations/firebase-integration"
+        "integrations/github-integration"
       ]
     },
     {
@@ -100,14 +96,6 @@
       "pages": [
         "resources/how-it-works",
         "resources/faq"
-      ]
-    },
-    {
-      "group": "Best Practices",
-      "pages": [
-        "best-practices/tips-and-tricks",
-        "best-practices/common-pitfalls",
-        "best-practices/optimization-guide"
       ]
     }
   ],
