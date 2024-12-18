@@ -25,12 +25,6 @@
     "url": "https://softgen.ai"
   },
   "anchors": [
-
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://discord.gg/79XX3tKqfX"
-    },
     {
       "name": "Blog",
       "icon": "newspaper",
@@ -44,8 +38,7 @@
         "introduction/welcome",
         "introduction/capabilities",
         "introduction/quick-start",
-        "introduction/stay-connected",
-        "introduction/support"
+        "introduction/stay-connected"
       ]
     },
     {
@@ -100,7 +93,6 @@
     }
   ],
   "footerSocials": {
-    "discord": "https://discord.gg/79XX3tKqfX",
     "linkedin": "https://linkedin.com/company/softgen-ai"
   }
 }
