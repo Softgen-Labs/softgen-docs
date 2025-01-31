@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:support@softgen.ai"
+      "url": "https://softgen.zendesk.com/hc/en-us/community/topics"
     }
   ],
   "topbarCtaButton": {
