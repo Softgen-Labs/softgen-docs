@@ -48,7 +48,8 @@
         "guides/step-by-step",
         "guides/prompting/basic-prompting",
         "guides/prompting/advanced-prompting",
-        "guides/deployment"
+        "guides/deployment",
+        "guides/domain-connection"
       ]
     },
     {
