@@ -49,7 +49,8 @@
         "guides/prompting/basic-prompting",
         "guides/prompting/advanced-prompting",
         "guides/deployment",
-        "guides/domain-connection"
+        "guides/domain-connection",
+        "guides/stripe-payments"
       ]
     },
     {
@@ -64,20 +65,19 @@
       "group": "Full Stack Development",
       "pages": [
         {
+          "group": "Supabase (New!)",
+          "pages": [
+            "fullstack/supabase/supabase-onboarding"
+          ]
+        },
+        {
           "group": "Firebase",
           "pages": [
             "fullstack/firebase/firebase-onboarding",
             "fullstack/firebase/user-authentication",
             "fullstack/firebase/database-operations",
             "fullstack/firebase/realtime-applications",
-            "fullstack/firebase/file-storage",
-            "fullstack/firebase/stripe-payments"
-          ]
-        },
-        {
-          "group": "Supabase",
-          "pages": [
-            "fullstack/supabase/supabase-onboarding"
+            "fullstack/firebase/file-storage"
           ]
         }
       ]
