@@ -50,7 +50,8 @@
         "guides/prompting/advanced-prompting",
         "guides/deployment",
         "guides/domain-connection",
-        "guides/stripe-payments"
+        "guides/stripe-payments",
+        "guides/team-collaboration"
       ]
     },
     {
