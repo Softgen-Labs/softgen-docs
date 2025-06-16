@@ -1,0 +1,82 @@
+---
+title: 'Context-Window & Thread Management'
+description: 'Practical playbook for staying in the token sweet-spot when collaborating with Softgen AI'
+---
+
+## Why This Matters
+
+Two common failure modes burn through tokens and derail progress:
+
+| # | Symptom | Root cause |
+|---|---------|------------|
+| 1 | **One mega-thread** hits 130-150 k tokens/-msg and the AI starts forgetting unrelated features, making destructive edits | The context window is overcrowded; the AI can’t attend to everything |
+| 2 | **Too many micro-threads** (new thread every small step) and the AI keeps reopening the same files, never building enough (20-30 k) context to move forward | Not enough shared context per thread |
+
+Softgen’s sweet-spot is roughly **20 k → 80 k tokens per message**. Below 20 k the AI may lack context; above ~100 k you risk runaway costs and hallucinations.
+
+---
+
+## Step-By-Step Playbook
+
+### 1. Monitor token usage
+- Softgen shows per-message token cost in the UI. **Flag anything > 80 k**.
+- Add a quick “/tokens?” macro to ask the AI to report its current context size.
+
+### 2. Keep a working-set of files open
+- Open only the files relevant to the current sub-task.
+- When you finish with a file, explicitly instruct: `Close file auth.tsx`.
+- Leave core entry points (e.g. `App.tsx`, key config) open so the AI retains project context.
+
+### 3. When a thread crosses ~100 k tokens
+1. Ask: `Summarize the current task, progress, and any critical context in < 1 k tokens.`
+2. Copy that summary.
+3. Start a **new thread** → paste the summary as the first message.
+4. Re-open only the necessary files and continue.
+
+> This “Summarize & Restart” pattern resets the sliding window while preserving momentum.
+
+### 4. Advanced troubleshooting prompt (for error loops)
+Copy-paste when the AI is stuck in repeated fixes:
+```markdown
+"Your error loops so far appear to be based on attempting to solve the immediate error reported with too narrow a focus, without fully considering the downstream effects or other potential issues.
+
+Instead of making more changes, please:
+1. Review your entire current context window.
+2. Output a full debug report including:
+   • Complete issue description & context
+   • All solution paths attempted so far (with attempt counts)
+   • Cross-reference applicability to current errors
+3. Achieve 99 %+ confidence in the correct solution path.
+4. For the rest of this session, prepend a 1-100 confidence level to every recommendation."
+```
+
+### 5. Think of the AI as a “genius but forgetful junior dev”
+- Needs clear directions, active management.
+- Use the playbook above to maintain the right amount of shared context.
+
+---
+
+## Quick Prompts Reference
+| Goal | Prompt |
+|------|--------|
+| Check token usage | `How many tokens are in context right now?` |
+| Summarize & restart | `Give me a < 1 k token summary of this task so I can start a new thread.` |
+| Close files | `Close all files except index.js and auth.tsx.` |
+| Confidence debug report | (See Section 4 above) |
+
+---
+
+## FAQ
+
+**Q. Why not just keep one giant thread?**  
+After ~100 k tokens the model’s attention gets spread thin; changes become error-prone and costs skyrocket.
+
+**Q. Why not start a fresh thread for *every* question?**  
+You’ll waste tokens re-establishing the same 20-30 k context repeatedly. Batch related steps together.
+
+**Q. Can Softgen automatically summarize?**  
+Upcoming features will prompt you when a thread nears the limit, but today you need to apply the playbook manually.
+
+---
+
+> **Key takeaway:** Stay inside the 20-80 k token sweet-spot by pruning context gradually and restarting threads strategically. This minimizes costs **and** prevents the AI from forgetting critical details.

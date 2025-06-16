@@ -107,58 +107,7 @@ Code Style Guidelines:
 4. Incrementally add complexity
 5. Validate against project requirements
 
-### Trick 2: Example-Driven Prompting
-
-**Technique:**
-- Include concrete code examples
-- Show desired input/output
-- Demonstrate expected behavior
-- Highlight edge cases
-
-**Example:**
-```markdown
-Input Validation Function Requirements:
-
-Desired Behavior Example:
-```typescript
-// Input: User registration form data
-const validateUserRegistration = (data) => {
-  // Expected: Comprehensive validation
-  // Return: Validation result with detailed errors
-}
-
-// Good validation
-const validData = {
-  username: 'johndoe123',
-  email: 'john@example.com',
-  password: 'Secure@123!'
-}
-
-// Expected Output:
-{
-  isValid: true,
-  errors: []
-}
-
-// Bad validation scenario:
-const invalidData = {
-  username: 'jo',
-  email: 'invalid-email',
-  password: 'weak'
-}
-
-// Expected Output:
-{
-  isValid: false,
-  errors: [
-    'Username too short',
-    'Invalid email format',
-    'Password does not meet complexity requirements'
-  ]
-}
-```
-
-### Trick 3: Comprehensive Error Handling
+### Trick 2: Comprehensive Error Handling
 
 **Error Communication Template:**
 ```markdown
@@ -208,25 +157,13 @@ Instead of making more changes, please perform the following:
 
 Remember to actively analyze the AI's debug report and collaborate on the next steps.
 
-## Optimizing AI Performance and Context Management
+## Managing Tokens and Long Conversations
 
-The number of "tokens" an AI processes directly impacts its performance and cost. Tokens represent pieces of information (words or parts of words). As your project grows in complexity and more files are involved, the AI needs to process more tokens to maintain context. This is a fundamental aspect of current AI technology. Here’s how to manage it effectively:
+As a project grows, managing the AI's context window (its "working memory") becomes critical for both cost-efficiency and accuracy. For a detailed playbook on how to manage conversation threads, token usage, and avoid common pitfalls, please see our dedicated guide:
 
-### 1. Monitor and Manage Token Usage in Threads
-- **Recognize High Token Usage:** Per-message token costs exceeding 100,000-150,000 often indicate that a conversation thread has become too long and cluttered.
-- **The "Summarize and Restart" Strategy:** If a thread becomes overly dense with tokens:
-  1. Ask the AI to provide a concise summary of the current task, progress, and any critical context.
-  2. Copy this summary.
-  3. Start a new, clean thread with the AI, pasting the summary as the initial prompt.
-  This "resets" the AI's immediate context, often leading to a much cleaner and more efficient experience.
-
-### 2. Proactive File Management
-- **Contextual Relevance:** The AI needs the right files open to understand the task. However, too many open files, especially large ones or those irrelevant to the immediate sub-task, can rapidly increase token consumption.
-- **Instruct the AI:** As part of your regular interaction, explicitly ask the AI to close unnecessary files. For example: "Okay, now that we've updated `auth.js`, please close it. Next, let's open `userProfile.js` to work on..."
-
-### 3. Balancing Context and Brevity
-- **Sufficient Context is Essential:** While managing token count is important, don't starve the AI of necessary information. It needs enough context within a task thread to achieve its goal.
-- **Focused Tasks:** Breaking down larger goals into smaller, well-defined tasks can help manage context more effectively. Each new task thread can start with a focused context.
+<Card title="Context-Window & Thread Management" href="/guides/prompting/context-window-management" icon="scale-3d">
+  A practical playbook for staying in the token sweet-spot when collaborating with Softgen AI.
+</Card>
 
 ## Advanced Prompt Quality Checklist
 
