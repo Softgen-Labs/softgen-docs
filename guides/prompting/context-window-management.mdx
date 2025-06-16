@@ -3,80 +3,119 @@ title: 'Context-Window & Thread Management'
 description: 'Practical playbook for staying in the token sweet-spot when collaborating with Softgen AI'
 ---
 
-## Why This Matters
+## Why Effective Context Management Matters
 
-Two common failure modes burn through tokens and derail progress:
+Collaborating effectively with Softgen's AI, especially on complex projects, hinges on managing what information the AI has access to (its "context window"). Two common pitfalls can hinder progress and increase token usage:
 
-| # | Symptom | Root cause |
-|---|---------|------------|
-| 1 | **One mega-thread** hits 130-150 k tokens/-msg and the AI starts forgetting unrelated features, making destructive edits | The context window is overcrowded; the AI can’t attend to everything |
-| 2 | **Too many micro-threads** (new thread every small step) and the AI keeps reopening the same files, never building enough (20-30 k) context to move forward | Not enough shared context per thread |
+| # | Symptom | Root Cause & Impact |
+|---|---------|---------------------|
+| 1 | **The Overstuffed Thread:** A single, very long conversation thread accumulates a massive number of tokens (e.g., consistently well over 100k per AI message). | The AI struggles to keep track of all details, potentially leading to errors, forgotten instructions, slower responses, or destructive edits. Token costs also escalate. |
+| 2 | **The Fragmented Approach:** Starting new chat threads for every minor step or question. | The AI constantly needs to re-establish project context (e.g., re-opening the same set of files, re-learning project goals), leading to inefficient token use and slower overall progress. |
 
-Softgen’s sweet-spot is roughly **20 k → 80 k tokens per message**. Below 20 k the AI may lack context; above ~100 k you risk runaway costs and hallucinations.
+**Tokens & AI Performance:**
+Softgen's AI model offers significant capabilities:
+- **Fast completions**, even in complex threads.
+- **Effective context handling**, making it capable with extensive conversations and numerous files.
+- **Good intent understanding** and fewer off-topic replies.
+
+While the AI is robust, the core principles of context management remain vital. As a general guideline, aim for a token count per AI message that keeps the AI focused and efficient—often in the **20k to 80k token range**. Consistently exceeding this by a large margin, especially with many files open, can still lead to the issues described above.
+
+This guide provides a playbook for managing your context effectively.
 
 ---
 
-## Step-By-Step Playbook
+## Step-By-Step Playbook for Optimal Context
 
-### 1. Monitor token usage
-- Softgen shows per-message token cost in the UI. **Flag anything > 80 k**.
-- Add a quick “/tokens?” macro to ask the AI to report its current context size.
+### 1. Master File Context Management (Your Primary Control)
 
-### 2. Keep a working-set of files open
-- Open only the files relevant to the current sub-task.
-- When you finish with a file, explicitly instruct: `Close file auth.tsx`.
-- Leave core entry points (e.g. `App.tsx`, key config) open so the AI retains project context.
+Softgen's **File Context Management** system gives you direct control over which files are included in the AI's context window. This is the most effective way to optimize token usage and AI performance.
 
-### 3. When a thread crosses ~100 k tokens
-1. Ask: `Summarize the current task, progress, and any critical context in < 1 k tokens.`
-2. Copy that summary.
-3. Start a **new thread** → paste the summary as the first message.
-4. Re-open only the necessary files and continue.
+**How to Access & Use:**
+- Click the **gear icon <i class="fas fa-cog"></i> (Agent Settings)** in the chat interface.
+- Navigate to the **File Context** section.
 
-> This “Summarize & Restart” pattern resets the sliding window while preserving momentum.
+**Key Features:**
+- **View Open Files:** See a list of all files currently in the AI's context.
+- **Selective File Closure:** Select and close unnecessary files. You can do this one by one or use **bulk operations** (e.g., "Close Selected", "Select All" then deselect essentials).
+- **Add Files:** Use the **intelligent file search** ("Type to search files...") to quickly find and add relevant files to the context.
+- **Token Optimization:** Regularly closing unneeded files significantly reduces token count per message, leading to faster responses and better AI focus.
 
-### 4. Advanced troubleshooting prompt (for error loops)
-Copy-paste when the AI is stuck in repeated fixes:
+**Strategy:**
+- **Monitor Token Counts & Understand Thresholds:** Softgen displays the token count for each AI message. Use this to gauge context health. While Softgen's AI is robust, consistently high token counts can still impact performance and clarity. Here's a mental model for interpreting these counts:
+    - **🟢 Up to ~80k tokens (Green Zone):** Generally a healthy context size for most tasks. The AI should have good focus.
+    - **🟡 ~80k - 99k tokens (Yellow Zone):** High context usage. The AI is processing a lot of information. *Consider proactively closing any non-essential files using the File Context Management UI, or think about whether your current sub-task is nearing completion and if it's a good time to summarize for a new thread.*
+    - **🟠 ~100k - 119k tokens (Orange Zone):** Very high context usage. AI performance might start to degrade (slower responses, potential for less relevant suggestions). *It's strongly recommended to prune unneeded files via the File Context Management UI. If the task is complex and ongoing, this is a strong signal to use the "Summarize & Restart" pattern.*
+    - **🔴 120k+ tokens (Red Zone):** Extreme context usage. Risk of AI hallucinations, errors, or significantly off-target responses increases sharply. *Immediate action is highly advised. Aggressively close all non-critical files. If the AI seems stuck or confused, use the "Summarize & Restart" pattern (you can even ask the AI in Plan Mode to help generate a concise summary if needed) to continue your work in a fresh, focused thread.*
+
+    If token counts are frequently in the yellow, orange, or red zones, or if AI performance degrades, your first step should always be to review and prune open files using the File Context Management UI.
+- **Working Set:** Keep only the files directly relevant to your current task or sub-task open.
+- **Core Files:** It can be useful to keep essential project files (e.g., main configuration, core modules, `App.tsx`) open if they provide crucial overarching context, but be mindful of their token cost.
+- **AI Assistance:** While the UI is primary, you can still ask the AI to `Open file X.py` or `Close all files except Y.md`. The AI also attempts to manage context, but your explicit control is more precise.
+
+### 2. Employ the "Summarize & Restart" Pattern for Very Long Threads
+
+Even with the AI's enhanced capabilities, extremely long and complex threads can benefit from a periodic reset.
+
+1.  **Ask the AI for a summary:** `Summarize our current task, key decisions, progress so far, and any critical unresolved issues in under 1000 tokens.`
+2.  **Copy the summary.**
+3.  Start a **new chat thread.**
+4.  Paste the summary as your first message in the new thread.
+5.  Use the **File Context Management UI** (gear icon <i class="fas fa-cog"></i>) to open only the essential files for the next phase of work.
+
+> This pattern provides the AI with a concise, relevant starting point in a fresh context, improving focus and efficiency.
+
+### 3. Use an Advanced Troubleshooting Prompt for Error Loops
+
+If the AI gets stuck in a loop of trying and failing to fix an error, use this prompt to reset its approach:
+
 ```markdown
-"Your error loops so far appear to be based on attempting to solve the immediate error reported with too narrow a focus, without fully considering the downstream effects or other potential issues.
+Your recent attempts to fix the error seem to be too narrowly focused on the immediate problem, without fully considering all variables or potential downstream consequences.
 
-Instead of making more changes, please:
-1. Review your entire current context window.
-2. Output a full debug report including:
-   • Complete issue description & context
-   • All solution paths attempted so far (with attempt counts)
-   • Cross-reference applicability to current errors
-3. Achieve 99 %+ confidence in the correct solution path.
-4. For the rest of this session, prepend a 1-100 confidence level to every recommendation."
+Before attempting another fix, please do the following:
+1.  Thoroughly review your entire current context, including all open files and our recent conversation.
+2.  Generate a comprehensive debug report that includes:
+    *   A clear restatement of the core issue and its context.
+    *   A list of all solution paths you've attempted so far for this specific issue, noting what happened with each.
+    *   An analysis of why those attempts failed.
+    *   Any alternative hypotheses or approaches you haven't tried yet.
+3.  Based on this full review, state your new proposed solution path and your confidence level (1-100%) in this new path.
+4.  For the remainder of this session, please prepend a confidence level (1-100%) to every coding suggestion or significant recommendation you make.
 ```
 
-### 5. Think of the AI as a “genius but forgetful junior dev”
-- Needs clear directions, active management.
-- Use the playbook above to maintain the right amount of shared context.
+**Pro Tip:** Save this prompt (and others you find useful) in **Agent Settings (gear icon <i class="fas fa-cog"></i>) > Prompts** for quick access!
+
+### 4. Treat the AI as a "Genius but Potentially Overwhelmed Teammate"
+
+- Provide clear, specific instructions.
+- Actively manage its context using the tools above.
+- Don't assume it remembers everything from very early in a long conversation, especially if many files are open. The "Summarize & Restart" pattern and focused file context help mitigate this.
 
 ---
 
-## Quick Prompts Reference
-| Goal | Prompt |
-|------|--------|
-| Check token usage | `How many tokens are in context right now?` |
-| Summarize & restart | `Give me a < 1 k token summary of this task so I can start a new thread.` |
-| Close files | `Close all files except index.js and auth.tsx.` |
-| Confidence debug report | (See Section 4 above) |
+## Quick Prompts Reference & Customization
+
+Remember to save your most-used or customized prompts in **Agent Settings (gear icon <i class="fas fa-cog"></i>) > Prompts**!
+
+| Goal | Prompt Example | Notes |
+|------|----------------|-------|
+| Check Open Files & Tokens | `What files are currently open? How many tokens does the current context involve?` | Primarily use **File Context Management UI** for viewing/managing files. Token counts are also shown per AI message. |
+| Summarize & Restart Thread | `Give me a concise summary (under 1000 tokens) of our current task, progress, key decisions, and any critical context so I can start a fresh thread.` | See Playbook Step 2. |
+| Instruct AI to Manage Files | `Close all files except 'main.py' and 'config.json'.` or `Open 'src/utils/helpers.js'.` | Supplement with the **File Context Management UI** for precise control. |
+| Advanced Debug Prompt | (See Playbook Step 3 for the full prompt) | Use when the AI is stuck in an error loop. Adapt as needed. |
 
 ---
 
 ## FAQ
 
-**Q. Why not just keep one giant thread?**  
-After ~100 k tokens the model’s attention gets spread thin; changes become error-prone and costs skyrocket.
+**Q: With the AI's improved long context, do I still need to worry about thread length or file count?**
+A: Softgen's AI significantly enhances its ability to handle longer conversations and more files. However, for optimal performance, cost-effectiveness, and AI clarity, proactive context management is still crucial. Extremely large contexts (many dozens of files or exceptionally long, unfocused discussions) can still tax any model. Using the File Context Management UI and the "Summarize & Restart" pattern for very extensive tasks remain valuable best practices.
 
-**Q. Why not start a fresh thread for *every* question?**  
-You’ll waste tokens re-establishing the same 20-30 k context repeatedly. Batch related steps together.
+**Q: Why not start a new chat thread for every single small task?**
+A: While this gives the AI a completely fresh start, it's often inefficient. You'll spend tokens and time repeatedly guiding the AI to re-open the same files and re-learn the broader project goals. It's about balance: group related tasks and development steps within a coherent thread, but use the strategies in this guide to prevent threads from becoming unmanageably large or unfocused.
 
-**Q. Can Softgen automatically summarize?**  
-Upcoming features will prompt you when a thread nears the limit, but today you need to apply the playbook manually.
+**Q: Does Softgen automatically manage all context or summarize threads for me?**
+A: Softgen's AI intelligently attempts to manage context based on the conversation. The File Context Management UI provides you with explicit, granular control. The "Summarize & Restart" technique is currently a user-initiated process. Softgen is continuously evolving, so always check the latest release notes for new features that might further automate or assist with context optimization.
 
 ---
 
-> **Key takeaway:** Stay inside the 20-80 k token sweet-spot by pruning context gradually and restarting threads strategically. This minimizes costs **and** prevents the AI from forgetting critical details.
+> **Key Takeaway:** Actively manage your AI's focus by using the **File Context Management UI** (Agent Settings <i class="fas fa-cog"></i>) to keep only relevant files open. Monitor per-message token counts. For very long or complex endeavors, use the "Summarize & Restart" pattern. These practices, even with a powerful AI model, lead to more efficient, accurate, and cost-effective AI collaboration.
