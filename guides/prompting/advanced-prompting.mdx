@@ -5,7 +5,9 @@ description: 'Unlock advanced AI collaboration techniques for transforming your 
 
 ## Introduction: The Power of Precise Communication
 
-Prompting is your superpower in AI-driven software development. It's about transforming complex ideas into actionable, precise instructions that AI can understand and execute brilliantly.
+Prompting is your superpower in AI-driven software development. With Softgen's AI offering fast responses and an enhanced understanding of long context, your ability to craft precise instructions is more impactful than ever. This guide explores advanced techniques to transform your complex ideas into actionable prompts that the AI can execute brilliantly.
+
+For a focused writing environment, consider toggling **Creative Mode** (⌘ M on Mac or Ctrl M on Windows) for a minimalist interface that helps you concentrate on crafting the perfect prompt.
 
 ## Understanding Your AI Collaborator
 
@@ -47,6 +49,8 @@ Design Philosophy:
 
 **Prompt Decomposition Strategy:**
 
+> **Pro Tip:** Complex structures like this are excellent candidates for saving as **Custom Prompts**. Access them via **Agent Settings (gear icon <i class="fas fa-cog"></i>) > Prompts** to effortlessly reuse your own powerful prompts or leverage helpful example prompts provided by Softgen. This is a smart way to streamline your workflow, especially for recurring tasks or advanced techniques, and is particularly useful if you're new to advanced prompting!
+
 ```markdown
 Feature: User Authentication System
 
@@ -69,6 +73,8 @@ Feature: User Authentication System
 ### 3. Precision Communication Framework
 
 **Advanced Prompt Tactics:**
+
+> **Pro Tip:** Detailed frameworks like the example below can be saved as **Custom Prompts**. You can capture and reuse your meticulously crafted prompts or explore Softgen's example prompts via **Agent Settings (gear icon <i class="fas fa-cog"></i>) > Prompts**. This makes it easy to apply sophisticated prompting strategies consistently.
 - Use precise, unambiguous language
 - Provide explicit examples
 - Define success criteria
@@ -98,7 +104,41 @@ Code Style Guidelines:
 
 ## Pro Tricks for Effective AI Collaboration
 
-### Trick 1: Iterative Refinement Strategy
+### Trick 1: Mastering Plan Mode for Strategic Prompting
+
+Softgen's **Plan Mode** is a specialized environment for strategic planning, high-level project guidance, and decision-making *before* you dive into code implementation. It allows you to map out your project effectively.
+
+#### What is Plan Mode?
+Plan Mode focuses on project architecture, design, and decision-making rather than immediate code output. In this mode, no files are created or modified; code suggestions are conceptual, and implementation details are discussed but not deployed.
+
+#### Key Characteristics & Benefits:
+*   **Strategic Focus:** Think through architecture and design, explore options without premature commitment to code.
+*   **Decision Support:** Evaluate technology choices (with pros and cons), compare different approaches, and prioritize features.
+*   **Clarity Before Coding:** Establish a clear direction to prevent costly rework later.
+*   **Holistic Perspective:** Consider all aspects of your project in context.
+*   **Documentation & Team Alignment:** Create a reference for your project's strategic decisions and ensure shared understanding.
+
+#### When to Use Plan Mode for Prompting:
+Plan Mode is ideal for prompting the AI during:
+*   **Early Project Stages:** Defining requirements, scope, and user stories.
+    *   *Example Prompt:* `"Let's outline the core requirements for a new mobile banking app. What are the essential features for an MVP, and what are some 'nice-to-have' features for later versions?"`
+*   **Architecture Decisions:** Evaluating technical approaches, frameworks, or libraries.
+    *   *Example Prompt:* `"I'm building a data-intensive web application. Discuss the pros and cons of using a NoSQL database like MongoDB versus a SQL database like PostgreSQL for this project, considering scalability, data structure, and query patterns."`
+*   **Technology Selection:** Choosing specific services or tools.
+    *   *Example Prompt:* `"Compare AWS Lambda, Google Cloud Functions, and Azure Functions for a serverless backend. Which would be most suitable for an application requiring low latency and integration with a Python-based data processing pipeline?"`
+*   **Feature Planning & Prioritization:** Deciding what to build first and how features interrelate.
+    *   *Example Prompt:* `"We're developing a project management tool. Help me prioritize these features: task dependencies, Gantt charts, time tracking, and user roles/permissions. What's a logical order for implementation?"`
+*   **Workflow & System Interaction Design:** Mapping out user journeys or how system components will interact.
+    *   *Example Prompt:* `"Design the user authentication flow for a web application, including registration, login, password reset, and MFA. What are the key security considerations at each step?"`
+
+#### Switching to Implementation:
+Once your strategic plan is solidified in Plan Mode:
+1.  Switch to **Creative Mode** for generating new files and implementing features based on your plan.
+2.  Switch to **Standard Mode** for modifying existing files and making updates according to your plan.
+
+The robust planning done in Plan Mode provides a solid foundation for efficient and targeted implementation.
+
+### Trick 2: Iterative Refinement Strategy
 
 **Process:**
 1. Start with a minimal, clear specification
@@ -107,7 +147,7 @@ Code Style Guidelines:
 4. Incrementally add complexity
 5. Validate against project requirements
 
-### Trick 2: Comprehensive Error Handling
+### Trick 3: Comprehensive Error Handling
 
 **Error Communication Template:**
 ```markdown
@@ -156,6 +196,30 @@ Instead of making more changes, please perform the following:
 - The confidence level prompt encourages more deliberate and justified responses from the AI.
 
 Remember to actively analyze the AI's debug report and collaborate on the next steps.
+
+> **Pro Tip:** This advanced troubleshooting prompt is a powerful tool. Save it or your customized version as a **Custom Prompt**! Head to **Agent Settings (gear icon <i class="fas fa-cog"></i>) > Prompts** to store it for quick access, or check out Softgen's example troubleshooting prompts. This feature helps you refine your projects and manage complex situations more effectively.
+
+### Trick 4: Leveraging Persistent Context with Saved Knowledge & Tech Stack
+
+Beyond individual prompts, Softgen allows you to provide the AI with persistent contextual information through Agent Settings (click the gear icon <i class="fas fa-cog"></i> in the chat interface). This helps the AI maintain consistency and generate more relevant outputs throughout your project.
+
+#### Using "Saved Knowledge" for Custom Instructions
+
+-   **What it is:** Found under **Agent Settings > Knowledge**, this is a single text box where you can provide custom instructions, rules, or guidelines that you want the AI to adhere to across your conversations for the project.
+-   **Purpose:** Use it to:
+    *   Define project-wide coding standards (e.g., "All Python code should be Black formatted and include type hints").
+    *   Specify a particular AI persona or communication style (e.g., "Respond concisely," "Explain technical concepts in simple terms").
+    *   List project-specific constraints or non-obvious requirements (e.g., "Avoid using X library due to licensing issues," "Always consider accessibility standard Y").
+-   **How it helps:** Reduces the need to repeat these instructions in every prompt, guiding the AI towards more consistent behavior.
+-   **Important Note:** While "Saved Knowledge" provides a strong baseline, the AI processes it along with all other context. In very long or context-dense conversations (many files open, long history), its influence might be less direct compared to immediate prompt instructions. It's a powerful persistent reminder, not an infallible command.
+
+#### Defining Your "Tech Stack"
+
+-   **What it is:** Accessible via **Agent Settings > Tech Stack**, this section allows you to specify the programming languages, frameworks, libraries, and other technologies being used in your current project.
+-   **Purpose:** Informing the AI about your specific technology choices.
+-   **How it helps:** Enables the AI to generate more accurate and relevant code snippets, configuration examples, and troubleshooting advice tailored to your project's environment. For instance, if your Tech Stack specifies "React with TypeScript and Material-UI," the AI is more likely to provide solutions using these technologies, improving the quality and applicability of its suggestions.
+
+By effectively utilizing "Saved Knowledge" and "Tech Stack," you create a richer, more stable underlying context for the AI, leading to more consistent and project-aligned collaboration with less repetitive prompting.
 
 ## Managing Tokens and Long Conversations
 

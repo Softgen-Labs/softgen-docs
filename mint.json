@@ -46,8 +46,14 @@
       "pages": [
         "guides/getting-started",
         "guides/step-by-step",
-        "guides/prompting/basic-prompting",
-        "guides/prompting/advanced-prompting",
+        {
+          "group": "Prompting Strategies",
+          "pages": [
+            "guides/prompting/basic-prompting",
+            "guides/prompting/advanced-prompting",
+            "guides/prompting/context-window-management"
+          ]
+        },
         "guides/deployment",
         "guides/domain-connection",
         "guides/stripe-payments"
