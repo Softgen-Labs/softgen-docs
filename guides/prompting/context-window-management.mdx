@@ -41,7 +41,7 @@ Softgen's **File Context Management** system gives you direct control over which
 - **Token Optimization:** Regularly closing unneeded files significantly reduces token count per message, leading to faster responses and better AI focus.
 
 **Strategy:**
-- **Monitor Token Counts & Understand Thresholds:** Softgen displays the token count for each AI message. Use this to gauge context health. While Softgen's AI is robust, consistently high token counts can still impact performance and clarity. Here's a mental model for interpreting these counts:
+- **Monitor Token Counts with the AI Context Monitor:** Softgen displays the token count for each AI message. On the **new Softgen frontend (accessible at https://new.softgen.ai)**, you'll also see a visual **AI Context Monitor** (a stoplight-style indicator) next to the token count. This provides an at-a-glance understanding of your current context health. Use this to gauge context health. While Softgen's AI is robust, consistently high token counts can still impact performance and clarity. This indicator uses the following thresholds, which also serve as a good mental model if you are on the classic frontend:
     - **🟢 Up to ~80k tokens (Green Zone):** Generally a healthy context size for most tasks. The AI should have good focus.
     - **🟡 ~80k - 99k tokens (Yellow Zone):** High context usage. The AI is processing a lot of information. *Consider proactively closing any non-essential files using the File Context Management UI, or think about whether your current sub-task is nearing completion and if it's a good time to summarize for a new thread.*
     - **🟠 ~100k - 119k tokens (Orange Zone):** Very high context usage. AI performance might start to degrade (slower responses, potential for less relevant suggestions). *It's strongly recommended to prune unneeded files via the File Context Management UI. If the task is complex and ongoing, this is a strong signal to use the "Summarize & Restart" pattern.*
@@ -104,6 +104,18 @@ Remember to save your most-used or customized prompts in **Agent Settings (gear 
 | Advanced Debug Prompt | (See Playbook Step 3 for the full prompt) | Use when the AI is stuck in an error loop. Adapt as needed. |
 
 ---
+
+## Accessing the Latest Features
+
+Softgen is continuously improving! Many new features, including UI enhancements like the AI Context Monitor, are often rolled out to our **new frontend, accessible at new.softgen.ai**, before appearing on the classic interface. If you're looking for the latest capabilities, be sure to check out the new frontend.
+
+## When Things Go Wrong
+
+Even with the best prompting and context management, AI can sometimes misunderstand or make unintended changes. Here’s how to handle such situations:
+
+- **Reverting Changes:** If the AI makes unintended changes, you can often revert to a previous state of your project using Softgen's GitHub integration. This allows you to step back and re-prompt with clearer instructions.
+
+- **Getting Support for Persistent Issues:** If you're stuck on an error even after trying the troubleshooting prompts and context management techniques detailed in these guides, you can ask the AI to: `Output a full summary of the persistent error, with all necessary context for Softgen technical support to evaluate.` Then, provide this summary, along with the **timestamp of the problematic AI interaction** (visible in the chat thread on both new and classic frontends), when you [Submit a Support Request](https://softgen.zendesk.com/hc/en-us/requests/new).
 
 ## FAQ
 
