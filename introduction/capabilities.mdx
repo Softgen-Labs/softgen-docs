@@ -3,13 +3,18 @@ title: 'Product Capabilities'
 description: 'Learn what Softgen can do for you'
 ---
 
-Softgen excels at building full-stack applications with complete Firebase integration, enabling rapid development of production-ready applications with all essential features.
+Softgen empowers you to build full-stack applications, featuring a 1-click Supabase integration for backend services. While Firebase was a previous default and is still usable, it requires manual setup outside the Softgen UI. This enables rapid development of production-ready applications with essential features.
 
 | Capability | Description | Maturity Level |
 | --- | --- | --- |
 | Frontend / UI | Build user interfaces & frontend | 🟢 Mature |
-| Persistence | Store and retrieve data with Firebase Firestore & Realtime DB | 🟢 Mature |
-| Authentication | Handle user login and accounts with Firebase Auth | 🟢 Mature |
-| File Storage | Manage file uploads with Firebase Storage | 🟢 Mature |
-| API Integration | Connect with external services | 🟢 Mature |
-| Deployment | Deploy to production | 🟢 Mature |
+| Persistence | Store and retrieve data (e.g., with Supabase, or manually configured Firebase) | 🟢 Mature |
+| Authentication | Handle user login and accounts (e.g., with Supabase Auth, or manually configured Firebase Auth) | 🟢 Mature |
+| File Storage | Manage file uploads (e.g., with Supabase Storage, or manually configured Firebase Storage) | 🟢 Mature |
+| Third-Party Integrations | Connect with external services & platforms | 🟡 In Progress |
+| Deployment | Deploy to production (e.g., via Vercel integration) | 🟢 Mature |
+
+**Details on Third-Party Integrations (🟡 In Progress):**
+Softgen facilitates fast full-stack public deployment through integrations like Supabase (1-click for backend), GitHub (for code management and version control), and Vercel (for frontend and serverless function deployment). The suitability of this specific stack depends on your project goals.
+
+While direct UI integrations for all services are evolving, you can generally integrate many popular services (e.g., Stripe for payments, Resend for emails, various authentication providers beyond Supabase's default) by guiding the AI to write the necessary code. However, integrations that could be harmful in a sandboxed environment (like web scrapers or certain automated tools) are not permitted.

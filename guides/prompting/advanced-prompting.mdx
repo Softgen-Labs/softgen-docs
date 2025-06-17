@@ -79,6 +79,7 @@ Feature: User Authentication System
 - Provide explicit examples
 - Define success criteria
 - Specify anti-patterns to avoid
+- **Clearly specify what *not* to change, or what to *only* change, if making surgical edits.** This helps prevent the AI from over-correcting or modifying unrelated code.
 
 **Precision Prompt Example:**
 ```markdown
@@ -174,10 +175,7 @@ Mitigation Strategies:
 
 **Advanced Troubleshooting for Persistent Errors:**
 
-When the AI seems "stuck" in an error loop, relying solely on pasting error messages is often insufficient. You need to guide it towards a deeper analysis. Use a prompt structure like this:
-
-```markdown
-"Your error loops so far appear to be based on attempting to solve the immediate error reported with too narrow a focus, without fully considering the downstream effects or other potential issues.
+When the AI seems "stuck" in an error loop, relying solely on pasting error messages is often insufficient. The AI might lack the broader understanding of the situation or the history of attempts. For these persistent issues, you need a more comprehensive troubleshooting prompt. The goal is to force the AI to step back, analyze the bigger picture, and report its findings methodically before attempting another fix. When using such a prompt, also make a note of the **timestamp of the problematic AI interaction** (visible in the chat thread) for your own reference or if you need to escalate to support.
 
 Instead of making more changes, please perform the following:
 1.  **Review and Analyze:** Thoroughly review your entire current context window for the blocking issue.
