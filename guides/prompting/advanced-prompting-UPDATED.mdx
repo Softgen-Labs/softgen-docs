@@ -1,0 +1,262 @@
+---
+title: 'Advanced Prompting'
+description: 'Unlock advanced AI collaboration techniques for transforming your software development workflow'
+---
+
+## Introduction: The Power of Precise Communication
+
+Prompting is your superpower in AI-driven software development. With Softgen's AI offering fast responses, an enhanced understanding of long context, and an **intelligent persona system** that adapts to your needs, your ability to craft precise instructions is more impactful than ever. This guide explores advanced techniques to transform your complex ideas into actionable prompts that the AI can execute brilliantly.
+
+For a focused writing environment, consider toggling **Creative Mode** (⌘ M on Mac or Ctrl M on Windows) for a minimalist interface that helps you concentrate on crafting the perfect prompt.
+
+## Understanding Your AI Collaborator
+
+Think of your AI development partner not as an all-knowing Chief Technical Officer, but as a **team of specialized experts** that automatically adapts to your needs. With Softgen's persona system, you get:
+
+- **Contextual Expertise:** The AI automatically selects appropriate specialists (Architect, Troubleshooter, Performance Expert, etc.) based on your needs
+- **Mode-Aware Assistance:** Different expertise combinations for Plan, Creative, and Standard modes
+- **Intelligent Adaptation:** The system learns from your context and adjusts its approach accordingly
+
+<Card title="AI Persona System" href="/guides/prompting/persona-system" icon="users">
+  Learn how Softgen's intelligent persona system provides contextually relevant expertise for every development scenario.
+</Card>
+
+## Advanced Prompting Techniques
+
+### 1. Contextual Deep Dive Technique
+
+**What It Means:**
+Create a comprehensive context that gives AI a 360-degree view of your project. The persona system will automatically select appropriate expertise based on your context.
+
+**Example Prompt Structure:**
+```markdown
+Project Context:
+- Problem Domain: Enterprise Task Management
+- Target Users: Remote teams, project managers
+- Core Challenges:
+  * Distributed workforce coordination
+  * Real-time progress tracking
+  * Minimal communication overhead
+
+Technical Constraints:
+- Must integrate with existing tools
+- GDPR compliance
+- Low-latency performance
+- Cross-platform compatibility
+
+Design Philosophy:
+- Minimalist interface
+- Intuitive user experience
+- Accessibility-first approach
+```
+
+*Note: This context will automatically trigger the Architect and Product Manager personas for strategic guidance.*
+
+### 2. Mode-Optimized Prompting
+
+**Leverage Softgen's three modes for optimal results:**
+
+#### Plan Mode Prompting 🧠
+**Best for:** Strategic planning, architecture decisions, feature roadmapping
+**Activated Personas:** Architect + Product Manager
+
+```markdown
+Example Plan Mode Prompt:
+"Let's design the architecture for a real-time collaboration platform. I need to understand:
+- Database schema for handling concurrent edits
+- WebSocket vs Server-Sent Events for real-time updates  
+- Scalability considerations for 10,000+ concurrent users
+- Integration strategy with existing authentication systems"
+```
+
+#### Creative Mode Prompting ✨
+**Best for:** Innovation, new features, modern implementations
+**Activated Personas:** Innovation Expert + Architect
+
+```markdown
+Example Creative Mode Prompt:
+"I want to create an innovative user onboarding experience that:
+- Uses modern animation libraries for smooth transitions
+- Implements progressive disclosure of features
+- Includes interactive tutorials with real data
+- Adapts to user behavior patterns"
+```
+
+#### Standard Mode Prompting 🎯
+**Best for:** Debugging, optimization, maintenance
+**Activated Personas:** Troubleshooter + Performance Expert
+
+```markdown
+Example Standard Mode Prompt:
+"I'm experiencing slow database queries in my user dashboard. The page loads take 3-5 seconds. 
+Current setup: Next.js with Supabase, displaying user analytics with 6 different chart components.
+Need help optimizing query performance and identifying bottlenecks."
+```
+
+### 3. Precision Communication Framework
+
+**Advanced Prompt Tactics with Persona Awareness:**
+
+> **Pro Tip:** Detailed frameworks like the example below can be saved as **Custom Prompts**. You can capture and reuse your meticulously crafted prompts or explore Softgen's example prompts via **Agent Settings (gear icon <i class="fas fa-cog"></i>) > Prompts**. This makes it easy to apply sophisticated prompting strategies consistently.
+
+- Use precise, unambiguous language
+- Include context keywords that help persona selection
+- Provide explicit examples
+- Define success criteria
+- Specify anti-patterns to avoid
+- **Clearly specify what *not* to change, or what to *only* change, if making surgical edits.**
+
+**Precision Prompt Example:**
+```markdown
+Code Generation Requirements:
+- Use TypeScript strict mode (triggers Performance Expert)
+- Implement clean architecture principles (triggers Architect)
+- Follow SOLID design principles
+- Generate comprehensive documentation
+- Include unit test scaffolding
+
+Performance Optimization Focus: (triggers Performance Expert)
+- Minimize bundle size
+- Optimize for Core Web Vitals
+- Implement efficient caching strategies
+
+Explicit Constraints:
+- No global state management
+- Minimize external dependencies
+- Ensure type safety
+- Maximum function complexity: 15 lines
+```
+
+## Pro Tricks for Effective AI Collaboration
+
+### Trick 1: Mastering Plan Mode for Strategic Prompting
+
+Softgen's **Plan Mode** activates the **Architect + Product Manager personas**, providing specialized expertise for strategic planning and high-level project guidance.
+
+#### Enhanced Plan Mode with Persona System:
+*   **Automatic Expertise:** The Architect persona provides technical guidance while the Product Manager persona offers strategic direction
+*   **Integrated Decision-Making:** Get both technical feasibility and business impact analysis
+*   **Comprehensive Planning:** Architecture decisions informed by product strategy
+
+#### Strategic Prompting Examples:
+
+**Architecture Planning:**
+```markdown
+"I'm building a SaaS platform for small businesses. Help me design:
+- Multi-tenant database architecture
+- Subscription billing integration strategy  
+- User role and permission system
+- API design for third-party integrations
+
+Consider both technical scalability and business model flexibility."
+```
+
+**Feature Prioritization:**
+```markdown
+"For our project management tool MVP, help prioritize these features:
+- Real-time collaboration, Gantt charts, Time tracking, Custom workflows
+- Mobile app, API access, Advanced reporting, Integration marketplace
+
+Factor in development complexity, user impact, and competitive advantage."
+```
+
+### Trick 2: Context-Aware Error Resolution
+
+**Enhanced Error Communication with Persona System:**
+
+The Troubleshooter persona automatically activates for error scenarios, providing specialized debugging expertise.
+
+```markdown
+Error Resolution Template:
+- Error Type: [Authentication/Performance/Build/Runtime]
+- Exact Error Message: [Full error text]
+- Context: [What you were trying to accomplish]
+- Environment: [Development/Production/Staging]
+- Recent Changes: [What was modified recently]
+
+Example:
+"Getting authentication errors in production. Users can't log in via Google OAuth.
+Error: 'Invalid redirect_uri' 
+Context: Just deployed new version with updated OAuth settings
+Environment: Production (works fine in development)
+Recent Changes: Updated environment variables for production domain"
+```
+
+**Advanced Troubleshooting for Persistent Errors:**
+
+When the AI seems "stuck" in an error loop, use this comprehensive troubleshooting approach:
+
+```markdown
+"Instead of making more changes, please perform the following:
+1. **Review and Analyze:** Thoroughly review the current context for the blocking issue
+2. **Output Debug Report:** Generate a full debug report including:
+   - Complete description of the issue and context
+   - All solution paths attempted so far (with attempt counts)
+   - Cross-reference attempted solutions against current symptoms
+3. **Assess Confidence:** Evaluate until you have 99%+ confidence in the solution
+4. **State Confidence:** Output confidence levels (1-100) with all recommendations"
+```
+
+### Trick 3: Performance-Optimized Prompting
+
+**Leverage the Performance Expert persona for optimization tasks:**
+
+```markdown
+Performance Optimization Prompt:
+"I need to optimize my Next.js application for better Core Web Vitals scores.
+Current issues:
+- LCP: 4.2s (target: <2.5s)
+- FID: 180ms (target: <100ms)  
+- CLS: 0.15 (target: <0.1)
+
+Application details:
+- E-commerce site with product catalog
+- Image-heavy pages (product photos)
+- Complex filtering and search functionality
+- Supabase backend with real-time features
+
+Please provide a systematic optimization strategy."
+```
+
+### Trick 4: Innovation-Driven Development
+
+**Activate the Innovation Expert persona for creative solutions:**
+
+```markdown
+Innovation Prompt:
+"I want to create a cutting-edge user experience for our data visualization dashboard.
+Goals:
+- Make complex data accessible to non-technical users
+- Implement modern interaction patterns
+- Use latest web technologies for smooth performance
+- Create an intuitive, delightful user experience
+
+Current stack: Next.js, TypeScript, Tailwind CSS, D3.js
+Looking for innovative approaches to data storytelling and user interaction."
+```
+
+## Managing Tokens and Long Conversations
+
+As a project grows, managing the AI's context window becomes critical. The persona system helps by providing focused expertise, reducing the need for repetitive context.
+
+<Card title="Context-Window & Thread Management" href="/guides/prompting/context-window-management" icon="scale-3d">
+  A practical playbook for staying in the token sweet-spot when collaborating with Softgen AI.
+</Card>
+
+## Advanced Prompt Quality Checklist
+
+✅ Clear project context  
+✅ Appropriate mode selection (Plan/Creative/Standard)  
+✅ Context keywords for persona activation  
+✅ Precise requirements  
+✅ Technical constraints  
+✅ Design philosophy  
+✅ Performance expectations  
+✅ Error handling strategies  
+✅ Compliance considerations  
+
+## Key Takeaway
+
+Effective prompting with Softgen's persona system is about creating a seamless dialogue between human creativity and AI's specialized expertise. The system automatically adapts to provide the most relevant assistance for every situation.
+
+**Pro Tip:** Trust the persona system to select appropriate expertise, but guide it with clear context and strategic mode selection for optimal results.

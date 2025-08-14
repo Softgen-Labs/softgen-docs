@@ -1,0 +1,198 @@
+---
+title: 'AI Persona System'
+description: 'Understanding Softgen\'s intelligent persona system for context-aware development assistance'
+---
+
+## Introduction: Intelligent Context-Aware AI
+
+Softgen features an advanced **AI Persona System** that automatically adapts its expertise and communication style based on your project context, development mode, and specific needs. This intelligent system ensures you get the most relevant assistance for every situation.
+
+## How the Persona System Works
+
+### Automatic Persona Selection
+
+The AI automatically selects the most appropriate persona(s) based on:
+
+1. **Your Selected Mode** (Plan, Creative, or Standard)
+2. **Your Message Content** (keywords, intent, and context)
+3. **Error Context** (when troubleshooting issues)
+4. **Project State** (build status, complexity, etc.)
+
+### Available AI Personas
+
+#### 🏗️ **Architect Persona**
+**Specializes in:** System design, architecture patterns, scalability planning
+- Next.js architecture patterns and best practices
+- Database schema design and optimization
+- API design and integration strategies
+- Cloud infrastructure and deployment planning
+
+**Activated when:** Planning mode, architecture discussions, system design questions
+
+#### 🔧 **Troubleshooter Persona**
+**Specializes in:** Debugging, error resolution, performance optimization
+- Error diagnosis and systematic debugging
+- Performance bottleneck identification
+- Code quality improvement
+- Testing and validation strategies
+
+**Activated when:** Error scenarios, debugging requests, performance issues
+
+#### 📊 **Product Manager Persona**
+**Specializes in:** Feature planning, user experience, project strategy
+- Feature prioritization and roadmap planning
+- User experience optimization
+- Business logic implementation
+- Project scope and timeline management
+
+**Activated when:** Planning mode, feature discussions, strategic decisions
+
+#### ⚡ **Performance Expert Persona**
+**Specializes in:** Optimization, efficiency, scalability
+- Code performance optimization
+- Database query optimization
+- Frontend performance tuning
+- Resource usage optimization
+
+**Activated when:** Performance-related requests, optimization tasks
+
+#### 💡 **Innovation Expert Persona**
+**Specializes in:** Creative solutions, modern patterns, cutting-edge features
+- Modern development patterns and techniques
+- Creative problem-solving approaches
+- Emerging technology integration
+- Innovative user experience design
+
+**Activated when:** Creative mode, innovation requests, modern feature development
+
+## Mode-Specific Persona Combinations
+
+### Plan Mode 🧠
+**Primary Personas:** Architect + Product Manager
+- **Focus:** Strategic planning, architecture design, feature roadmapping
+- **Best for:** Project planning, system design, decision-making
+- **Output:** Comprehensive plans, architectural diagrams, strategic recommendations
+
+### Creative Mode ✨
+**Primary Personas:** Innovation Expert + Architect
+- **Focus:** Creative solutions, modern patterns, innovative features
+- **Best for:** New feature development, creative problem-solving, modern implementations
+- **Output:** Innovative code solutions, creative UI/UX, cutting-edge implementations
+
+### Standard Mode 🎯
+**Primary Personas:** Troubleshooter + Performance Expert
+- **Focus:** Reliable implementation, debugging, optimization
+- **Best for:** Bug fixes, performance improvements, maintenance tasks
+- **Output:** Stable code, optimized solutions, thorough debugging
+
+## Context-Aware Persona Selection
+
+The system analyzes your messages for specific keywords and intent:
+
+### Architecture & Design Keywords
+- "design", "architecture", "structure", "plan", "system"
+- **Triggers:** Architect Persona
+
+### Debugging & Issues Keywords
+- "bug", "error", "fix", "debug", "issue", "problem"
+- **Triggers:** Troubleshooter Persona
+
+### Performance Keywords
+- "slow", "optimize", "performance", "speed", "efficiency"
+- **Triggers:** Performance Expert Persona
+
+### Innovation Keywords
+- "modern", "creative", "innovative", "new", "cutting-edge"
+- **Triggers:** Innovation Expert Persona
+
+### Planning Keywords
+- "roadmap", "features", "priority", "strategy", "planning"
+- **Triggers:** Product Manager Persona
+
+## Error-Specific Persona Activation
+
+When build errors or issues are detected, the system automatically activates specialized debugging personas:
+
+### Import/Export Errors
+- **Specialized Response:** Component export validation, import path verification
+- **Focus:** TypeScript/React import system debugging
+
+### Performance Issues
+- **Specialized Response:** Performance profiling, optimization strategies
+- **Focus:** Code efficiency and resource optimization
+
+### Authentication Errors
+- **Specialized Response:** Auth flow debugging, security best practices
+- **Focus:** Authentication system troubleshooting
+
+## Best Practices for Persona System
+
+### 1. Let the System Work Automatically
+- The persona system works best when you communicate naturally
+- No need to explicitly request specific personas
+- The AI will automatically select the most appropriate expertise
+
+### 2. Provide Clear Context
+```markdown
+Good: "I'm getting authentication errors when users try to log in"
+Better: "Users are getting 401 errors during login, specifically when using Google OAuth. The error happens after successful Google authentication but before our app receives the token."
+```
+
+### 3. Use Mode Selection Strategically
+- **Plan Mode:** For strategic discussions and architecture planning
+- **Creative Mode:** For new features and innovative solutions
+- **Standard Mode:** For debugging and maintenance tasks
+
+### 4. Leverage Context-Aware Keywords
+Include relevant keywords to help the system select optimal personas:
+- "Let's architect a scalable solution..." (triggers Architect)
+- "I need to debug this performance issue..." (triggers Troubleshooter + Performance Expert)
+- "How can we innovate the user experience..." (triggers Innovation Expert)
+
+## Advanced Persona Features
+
+### Multi-Persona Collaboration
+The system can activate multiple personas simultaneously for complex tasks:
+- **Architecture + Performance:** For scalable system design
+- **Troubleshooter + Innovation:** For creative debugging solutions
+- **Product Manager + Architect:** For feature planning with technical considerations
+
+### Dynamic Persona Switching
+Within a single conversation, the AI can switch personas as the context changes:
+1. Start with Product Manager for feature planning
+2. Switch to Architect for technical design
+3. Transition to Troubleshooter for implementation issues
+
+### Error Context Integration
+When errors occur, the system:
+1. Analyzes the error type and context
+2. Activates appropriate debugging personas
+3. Provides specialized troubleshooting approaches
+4. Maintains error context throughout the debugging session
+
+## Persona System Benefits
+
+### 🎯 **Contextually Relevant Responses**
+Get expertise that matches your specific needs and project context
+
+### 🚀 **Improved Efficiency**
+Faster problem resolution with specialized knowledge application
+
+### 🧠 **Intelligent Adaptation**
+AI automatically adjusts its approach based on your development mode and needs
+
+### 🔄 **Seamless Transitions**
+Smooth persona switching as your conversation evolves
+
+### 📈 **Enhanced Quality**
+Higher quality solutions through specialized expertise application
+
+## Tips for Maximum Effectiveness
+
+1. **Be Specific:** Detailed descriptions help the system select optimal personas
+2. **Use Natural Language:** Communicate naturally; the system understands context
+3. **Leverage Mode Selection:** Choose the right mode for your current task
+4. **Provide Error Context:** Include full error messages and context for debugging
+5. **Trust the System:** Let the AI automatically select appropriate expertise
+
+The persona system represents a significant advancement in AI-assisted development, providing you with contextually aware expertise that adapts to your specific needs and development workflow.
