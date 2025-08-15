@@ -100,14 +100,18 @@
       "pages": [
         "plans/understanding-tokens",
         "plans/pricing-plans",
-        "plans/features-comparison"
+        "plans/features-comparison",
+        "plans/membership",
+        "plans/wallet-and-billing"
       ]
     },
     {
       "group": "Resources",
       "pages": [
         "resources/how-it-works",
-        "resources/faq"
+        "resources/faq",
+        "resources/referrals-and-credits",
+        "resources/community-progress"
       ]
     }
   ],

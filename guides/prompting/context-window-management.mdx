@@ -41,11 +41,11 @@ Softgen's **File Context Management** system gives you direct control over which
 - **Token Optimization:** Regularly closing unneeded files significantly reduces token count per message, leading to faster responses and better AI focus.
 
 **Strategy:**
-- **Monitor Token Counts with the AI Context Monitor:** Softgen displays the token count for each AI message. On the **new Softgen frontend (accessible at https://new.softgen.ai)**, you'll also see a visual **AI Context Monitor** (a stoplight-style indicator) next to the token count. This provides an at-a-glance understanding of your current context health. Use this to gauge context health. While Softgen's AI is robust, consistently high token counts can still impact performance and clarity. This indicator uses the following thresholds, which also serve as a good mental model if you are on the classic frontend:
-    - **🟢 Up to ~80k tokens (Green Zone):** Generally a healthy context size for most tasks. The AI should have good focus.
-    - **🟡 ~80k - 99k tokens (Yellow Zone):** High context usage. The AI is processing a lot of information. *Consider proactively closing any non-essential files using the File Context Management UI, or think about whether your current sub-task is nearing completion and if it's a good time to summarize for a new thread.*
-    - **🟠 ~100k - 119k tokens (Orange Zone):** Very high context usage. AI performance might start to degrade (slower responses, potential for less relevant suggestions). *It's strongly recommended to prune unneeded files via the File Context Management UI. If the task is complex and ongoing, this is a strong signal to use the "Summarize & Restart" pattern.*
-    - **🔴 120k+ tokens (Red Zone):** Extreme context usage. Risk of AI hallucinations, errors, or significantly off-target responses increases sharply. *Immediate action is highly advised. Aggressively close all non-critical files. If the AI seems stuck or confused, use the "Summarize & Restart" pattern (you can even ask the AI in Plan Mode to help generate a concise summary if needed) to continue your work in a fresh, focused thread.*
+- **Monitor Token Counts with the AI Context Monitor:** Softgen displays the token count for each AI message along with a visual **Context Monitor** (a stoplight-style indicator). This provides an at-a-glance understanding of your current context health. While Softgen's AI is robust, consistently high token counts can still impact performance and clarity. The current thresholds are:
+    - **🟢 Up to ~150k tokens (Green Zone):** Generally a healthy context size for most tasks. The AI should have good focus.
+    - **🟡 150k – 170k tokens (Yellow Zone):** High context usage. *Consider proactively closing any non-essential files using the File Context Management UI, or decide if it’s a good time to summarize for a new thread.*
+    - **🟠 170k – 190k tokens (Orange Zone):** Very high context usage. *Prune unneeded files now. If the task is complex and ongoing, this is a strong signal to use the "Summarize & Restart" pattern.*
+    - **🔴 190k+ tokens (Red Zone):** Extreme context usage. *Aggressively close all non-critical files or start a fresh thread with a concise summary.*
 
     If token counts are frequently in the yellow, orange, or red zones, or if AI performance degrades, your first step should always be to review and prune open files using the File Context Management UI.
 - **Working Set:** Keep only the files directly relevant to your current task or sub-task open.
@@ -107,7 +107,7 @@ Remember to save your most-used or customized prompts in **Agent Settings (gear 
 
 ## Accessing the Latest Features
 
-Softgen is continuously improving! Many new features, including UI enhancements like the AI Context Monitor, are often rolled out to our **new frontend, accessible at new.softgen.ai**, before appearing on the classic interface. If you're looking for the latest capabilities, be sure to check out the new frontend.
+Softgen is continuously improving! Features like the AI Context Monitor roll out regularly in the app. For the latest capabilities, keep an eye on the in‑app changelog.
 
 ## When Things Go Wrong
 
