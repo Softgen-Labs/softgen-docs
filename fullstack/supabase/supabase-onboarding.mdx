@@ -1,30 +1,136 @@
 ---
-title: 'Supabase Onboarding'
-description: 'Learn how to connect your project with Supabase'
+title: 'Supabase Integration'
+description: 'One-click Supabase setup managed by Softgen Platform'
 ---
 
-# Connecting with Supabase
+# Connect Your Project to Supabase
 
-To connect your project with Supabase, follow these simple steps:
+Softgen now offers **one-click Supabase integration** that's fully managed by the platform. Get instant access to database, authentication, storage, and more - all without leaving Softgen.
 
-1. From your project dashboard, click on the "Setup Supabase" button in the navigation bar.
+## Quick Setup (Recommended)
 
-2. A modal window titled "Connect Supabase" will appear with two options:
-   - Connect Account
-   - Select Project
+The easiest way to add Supabase to your project is through our **Platform-Managed** integration:
+
+### 1. Connect to Supabase
+
+When your AI agent detects that your project needs a database, you'll see an **"Enable Supabase"** button directly in the chat. Simply click it to proceed.
+
+Alternatively, you can manually trigger the connection:
+- Click the **"Setup Supabase"** button in your project navbar
+- Or access it from your project settings
 
 <Frame>
-  <img src="/images/supabase.png" alt="Supabase Connection Modal" />
+  <img src="/images/supabase-connect.png" alt="Connect to Supabase Modal" />
 </Frame>
 
-3. If you haven't connected your Supabase account yet, you'll see:
-   - A "No Supabase Connection" message
-   - An explanation that you need to connect your project to use Supabase's powerful backend services
+When you click **"Connect to Supabase"**, the platform will:
+- Automatically create a Supabase project for you
+- Configure all necessary credentials
+- Set up your database, authentication, and storage
+- Connect everything to your Softgen project
 
-4. Click "Connect Account" to authorize with your Supabase account
-   - This will open a new window where you can log in to Supabase
-   - You'll need to authorize access to connect your project
+**Zero configuration required!**
 
-5. After authorization, you can select your Supabase project to connect with
+### 2. Manage Your Database
 
-Note: Supabase is an open-source Firebase alternative that provides database, authentication, storage, and serverless functions - all in one platform.
+Once connected, you'll see your Supabase project status:
+
+<Frame>
+  <img src="/images/supabase-connected.png" alt="Connected Supabase Project" />
+</Frame>
+
+Your Supabase project is now **Platform Managed**, which means:
+- ✅ Automatic project creation and setup
+- ✅ Instant access to database console
+- ✅ Pre-configured authentication
+- ✅ Storage ready to use
+- ✅ No manual credential management
+
+### 3. Access Database Console
+
+Click **"Open Console"** to access your database directly within Softgen:
+
+<Frame>
+  <img src="/images/supabase-database-console.png" alt="Supabase Database Console" />
+</Frame>
+
+From the integrated console, you can:
+- **Database**: View tables and edit data
+- **Users**: Manage authentication and user accounts
+- **Storage**: Handle file uploads and media
+- **Edge Functions**: Deploy serverless functions
+- **Secrets**: Manage environment variables
+- **Logs**: Monitor activity and debug issues
+
+## Platform-Managed Benefits
+
+### Why Choose Platform-Managed Supabase?
+
+| Feature | Platform-Managed (Recommended) | Custom Supabase |
+|---------|-------------------------------|-----------------|
+| Setup Time | Instant (one-click) | Manual configuration |
+| Credentials | Auto-configured | Manual setup required |
+| Database Console | Integrated in Softgen | External dashboard |
+| Management | Handled by Softgen | You manage it |
+| Best For | Most users, fastest setup | Advanced users with existing projects |
+
+### What's Included
+
+With Platform-Managed Supabase, you get:
+
+- **PostgreSQL Database**: Powerful relational database
+- **Authentication**: User sign-up, login, and session management
+- **Storage**: File uploads and CDN hosting
+- **Real-time**: Live data synchronization
+- **Edge Functions**: Serverless backend logic
+- **Row Level Security**: Built-in data protection
+
+## Using Your Own Supabase (Advanced)
+
+If you need to connect your own existing Supabase project instead of using the platform-managed option, you can do so through environment variables:
+
+1. Go to your project **Settings**
+2. Navigate to **Environment Variables**
+3. Add your Supabase credentials:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY` (for admin operations)
+
+> **Note:** This approach requires manual configuration and is only recommended for advanced users who need to use a specific Supabase organization or have special requirements.
+
+## What is Supabase?
+
+Supabase is an open-source Firebase alternative that provides:
+- **Database**: PostgreSQL with full SQL support
+- **Authentication**: Multiple providers (email, Google, GitHub, etc.)
+- **Storage**: File hosting and management
+- **Real-time**: Live data updates across clients
+- **Edge Functions**: Serverless TypeScript functions
+- **API**: Auto-generated REST and GraphQL APIs
+
+Everything you need for a modern full-stack application, integrated directly into Softgen.
+
+## Common Questions
+
+### Can I switch from Platform-Managed to my own Supabase later?
+
+Yes, though it requires migration. Contact support if you need to transfer your Platform-Managed project to your own Supabase organization.
+
+### Is there any cost for Platform-Managed Supabase?
+
+For now Supabase usage is included with your Softgen membership. The Supabase free tier is very generous, and if you exceed it, any additional costs are clearly communicated.
+
+### What happens to my data if I cancel my Softgen membership?
+
+You can export your data or transfer your Supabase project to your own organization before canceling. Contact support for assistance.
+
+## Need Help?
+
+If you have questions about Supabase integration:
+
+- **Email**: [support@softgen.ai](mailto:support@softgen.ai)
+- **Support Portal**: [https://softgen.zendesk.com/hc/en-us/requests/new](https://softgen.zendesk.com/hc/en-us/requests/new)
+
+---
+
+**Ready to build?** Click "Setup Supabase" in your project and start creating full-stack applications in minutes!
