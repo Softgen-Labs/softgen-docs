@@ -54,6 +54,7 @@
             "guides/prompting/context-window-management"
           ]
         },
+        "guides/import-from-lovable",
         "guides/deployment",
         "guides/domain-connection",
         "guides/stripe-payments",
@@ -92,6 +93,7 @@
     {
       "group": "Integrations",
       "pages": [
+        "integrations/import-from-github",
         "integrations/github-integration"
       ]
     },

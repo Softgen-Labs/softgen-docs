@@ -1,0 +1,144 @@
+---
+title: 'Import from Lovable'
+description: 'Move your Lovable project into Softgen in a few steps by exporting it to GitHub first'
+---
+
+## Overview
+
+Lovable is a great place to prototype, but when you're ready to go further (more powerful AI, deeper customisation, or a different workflow), Softgen can pick up right where Lovable left off.
+
+Because Lovable doesn't support direct ZIP or file exports to Softgen, the transfer route is **Lovable to GitHub to Softgen**. It takes about five minutes end to end.
+
+<Note>
+Importing from GitHub is a **paid feature** on Softgen. Confirm you have an active paid plan before starting.
+</Note>
+
+---
+
+## Before You Begin
+
+- A Lovable project you want to move to Softgen
+- A GitHub account (connected to Lovable for the export step)
+- A Softgen account on a paid plan
+
+---
+
+## Step 1: Export Your Lovable Project to GitHub
+
+Lovable has a built-in GitHub integration that pushes your project to a repository.
+
+1. Open your project in Lovable
+2. Click the **GitHub** button (top-right area of the editor)
+3. If prompted, connect your GitHub account and authorise Lovable
+4. Choose a repository name and click **Publish to GitHub** (or **Push to GitHub**, depending on your Lovable version)
+5. Wait for Lovable to finish pushing (you'll get a link to the new GitHub repository)
+
+> **Note:** Lovable creates a public repository by default. If you want a private repo, change the visibility in GitHub after Lovable creates it, or check Lovable's settings before publishing.
+
+---
+
+## Step 2: Import the Repository into Softgen
+
+1. Go to your Softgen Dashboard at [softgen.ai/app](https://softgen.ai/app)
+2. Click **Import from GitHub**
+3. Paste the GitHub repository URL from Step 1
+
+   For example:
+   ```
+   https://github.com/your-username/your-lovable-project
+   ```
+
+4. Give your project a name (Softgen will auto-suggest one from the repo name)
+5. Click **Import Project**
+
+---
+
+## Step 3: Connect GitHub (Private Repos Only)
+
+If you made the repository private, you'll need to connect your GitHub account to Softgen before the import can proceed:
+
+1. In the Import modal, click **Connect GitHub**
+2. Complete the GitHub OAuth authorisation
+3. Once connected, continue the import (Softgen will have access to your private repo)
+
+---
+
+## What Happens During Import
+
+Softgen works through these stages automatically:
+
+| Stage | What's happening |
+|---|---|
+| Setting up environment | Fresh cloud dev environment provisioned |
+| Cloning repository | Your Lovable repo is cloned from GitHub |
+| Detecting project type | Softgen identifies your stack as **Vite + React** (standard for Lovable) |
+| Configuring project files | Config adjustments made for the Softgen environment |
+| Installing dependencies | Dependencies installed using the lockfile from your repo |
+| Starting dev server | Dev server started and ready |
+| Finishing setup | Project opens in the Softgen AI chat |
+
+When it's done, you land directly in your project's AI chat and can start building immediately.
+
+---
+
+## About Lovable's Stack
+
+Lovable generates **Vite + React** projects. Softgen detects this automatically based on your project structure, specifically the presence of a `vite.config.ts` (or `.js`) file.
+
+You don't need to specify the stack manually. Just paste the URL and Softgen handles the rest.
+
+---
+
+## What Gets Imported
+
+| Imported | Not imported |
+|---|---|
+| All source code and components | Supabase database records |
+| UI components and styles | Secrets and API keys |
+| Assets (images, icons, static files) | Lovable-specific metadata |
+| `package.json` and lockfile | |
+| Vite config and project structure | |
+
+---
+
+## After Import: Getting Your App Running
+
+1. **Add your secrets** (any API keys or environment variables your app uses, like Supabase URL and anon key, need to be added manually in the Secrets panel; Softgen does not import these)
+
+2. **Reconnect Supabase** (if your Lovable app used Supabase, connect a Supabase project in Softgen and re-add your credentials; you'll need to recreate your database tables and any seed data, and the Softgen AI can help with this)
+
+3. **Test your app** (open the live preview and check that routing, UI, and core features load correctly)
+
+4. **Keep building** (use the AI chat to add new features, fix anything that needs adjusting, or refactor parts of your code)
+
+---
+
+## Common Issues
+
+### The app builds but doesn't look right
+This can happen when environment variables (like Supabase credentials) are missing. Add them via the Secrets panel and trigger a rebuild.
+
+### Dependency install fails
+- Make sure the `package-lock.json`, `yarn.lock`, `pnpm-lock.yaml`, or `bun.lockb` file was committed to the repo before exporting from Lovable. Without a lockfile, installs may fail or produce inconsistent results.
+- Verify there are no private/custom npm registry packages in your `package.json`.
+
+### Stack isn't detected as Vite + React
+Confirm that `vite.config.ts` (or `vite.config.js`) is at the **root** of the repository. If Lovable placed it elsewhere or the file is missing, stack detection may fall back incorrectly.
+
+### Import fails entirely
+If you see a **Contact Support** button after a failed import, click it. This sends us the import log and we can investigate. You can also reach us at [support@softgen.ai](mailto:support@softgen.ai) or via the [support portal](https://softgen.zendesk.com/hc/en-us/requests/new).
+
+---
+
+## Tip: Keep Your Lovable Repo in Sync
+
+Until you're fully moved over to Softgen, you can keep pushing changes from Lovable to GitHub. Just re-import or continue working in Softgen's chat, whatever suits your workflow during the transition.
+
+---
+
+## Related Guides
+
+- [Import from GitHub](/integrations/import-from-github)
+- [GitHub Integration](/integrations/github-integration)
+- [Supabase Onboarding](/fullstack/supabase/supabase-onboarding)
+- [Secrets Management](/essentials/secrets)

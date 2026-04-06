@@ -1,0 +1,161 @@
+---
+title: 'Import from GitHub'
+description: 'Bring an existing GitHub repository into Softgen and keep building with AI'
+---
+
+## Overview
+
+Softgen's **Import from GitHub** feature lets you bring any existing codebase into Softgen so you can continue developing it with AI assistance. Whether it's a project you started elsewhere (like Lovable, Bolt, or a local editor), the import flow clones the repository, detects your stack automatically, and gets a live dev environment ready for you.
+
+<Note>Import from GitHub is a **paid feature**. Make sure you are on a plan that includes this capability before getting started. You can check your current plan in [Plans & Pricing](https://softgen.ai/pricing).</Note>
+
+---
+
+## Before You Begin
+
+- You have a **Softgen account** on a paid plan
+- The repository you want to import exists on GitHub (public **or** private)
+- For private repositories: your GitHub account is connected to Softgen (see [Connect GitHub](#connecting-github-for-private-repos) below)
+
+---
+
+## How to Import
+
+1. Go to your **Dashboard** at [softgen.ai/app](https://softgen.ai/app)
+2. Click **Import from GitHub**
+3. Paste your **repository URL** (HTTPS or SSH, both work)
+4. Give your project a **name** (Softgen will suggest one based on the repo name)
+5. Click **Import Project** and watch the progress steps complete
+
+![The Import from GitHub modal showing the GitHub Connection panel, Repository URL field, Project Name field, and project type detection](/images/import-from-github-modal.png)
+
+Once the import finishes, Softgen opens your project directly in the AI chat view so you can start building right away.
+
+---
+
+## Accepted URL Formats
+
+You can paste the repository URL in any of the following formats:
+
+| Format | Example |
+|---|---|
+| HTTPS | `https://github.com/owner/repo` |
+| HTTPS with `.git` | `https://github.com/owner/repo.git` |
+| SSH | `git@github.com:owner/repo` |
+| SSH with `.git` | `git@github.com:owner/repo.git` |
+
+---
+
+## Connecting GitHub for Private Repos
+
+If your repository is private, you need to connect your GitHub account first:
+
+1. In the Import modal, click **Connect GitHub**
+2. Authorize Softgen via the GitHub OAuth flow
+3. Return to the Import modal (your connected account will be confirmed)
+4. Continue with the import as normal
+
+> **Tip:** You only need to connect GitHub once. After that, Softgen remembers your connection for future imports.
+
+---
+
+## What Happens During Import
+
+Softgen handles the full environment setup in the background. You'll see live progress through these stages:
+
+| Step | What Softgen does |
+|---|---|
+| **Setting up environment** | Provisions a fresh cloud development environment |
+| **Cloning repository** | Clones your repo from GitHub |
+| **Detecting project type** | Identifies your stack (Next.js App Router, Next.js Pages Router, or Vite + React) |
+| **Configuring project files** | Adjusts config files as needed for the Softgen environment |
+| **Creating GitHub repository** | Creates a Softgen-managed copy of your repo for version control |
+| **Setting up Git** | Initialises Git history and remote tracking |
+| **Installing dependencies** | Runs your package manager install (`npm`, `yarn`, `pnpm`, or `bun`) |
+| **Starting dev server** | Brings up your dev server via pm2 |
+| **Finishing setup** | Final checks and routing you into your project |
+
+---
+
+## Supported Stacks
+
+Softgen automatically detects the following project types during import:
+
+- **Next.js App Router**
+- **Next.js Pages Router**
+- **Vite + React**
+
+Stack detection is based on your project's file and folder structure, with no manual selection required.
+
+> **Coming from Lovable?** Lovable projects are typically **Vite + React**. See the dedicated [Import from Lovable](/guides/import-from-lovable) guide for a step-by-step walkthrough.
+
+---
+
+## Package Managers
+
+Softgen respects your project's existing package manager based on the lockfile present in the repo:
+
+| Lockfile | Package manager used |
+|---|---|
+| `package-lock.json` | npm |
+| `yarn.lock` | Yarn |
+| `pnpm-lock.yaml` | pnpm |
+| `bun.lockb` | Bun |
+
+> **Best practice:** Always commit your lockfile. This ensures Softgen installs exactly the same dependency versions you developed with, making your environment reproducible and reliable.
+
+---
+
+## What Is and Isn't Imported
+
+### What gets imported
+- All source code files and folders
+- Project configuration files (`package.json`, `tsconfig.json`, framework configs, etc.)
+- Lockfiles and dependencies
+- Assets (images, fonts, static files)
+
+### What is not imported
+- **Environment variables and secrets** (add these manually via your project's Secrets panel after import)
+- **Database data** (schema structure may be detected, but existing data records are not migrated)
+- **ZIP uploads** (the import flow requires a GitHub repository URL; direct ZIP uploads are not supported here)
+
+---
+
+## After Import
+
+Once your project opens in Softgen, here's what to do next:
+
+1. **Add your secrets** (go to the Secrets panel and add any API keys or environment variables your app needs to run)
+2. **Test your app** (open the live preview and check that core flows work as expected)
+3. **Start building** (use the AI chat to add features, fix bugs, or refactor existing code)
+
+---
+
+## Troubleshooting
+
+### Import fails with a URL error
+Double-check the format of your repository URL. Both HTTPS and SSH are supported but must match the patterns shown in [Accepted URL Formats](#accepted-url-formats).
+
+### Private repository access denied
+Make sure you've completed the [Connect GitHub](#connecting-github-for-private-repos) step and that your GitHub account has access to the private repo (including org repos if applicable).
+
+### Dependency install fails
+- Verify your `package.json` is valid and at the project root
+- Confirm your lockfile is committed to the repository
+- Check that all packages in `package.json` are publicly available on npm (private registries are not currently supported)
+
+### Stack not detected correctly
+- Ensure standard framework files are present (`next.config.js` / `next.config.ts` for Next.js; `vite.config.js` / `vite.config.ts` for Vite)
+- If your project structure is non-standard or monorepo-based, complex configurations may require manual adjustments
+
+### Something else went wrong
+If the import fails and you see a **Contact Support** button in the modal, use it. Our team can investigate the specific error from the import log. You can also reach us at [support@softgen.ai](mailto:support@softgen.ai) or via the [support portal](https://softgen.zendesk.com/hc/en-us/requests/new).
+
+---
+
+## Related Guides
+
+- [Import from Lovable](/guides/import-from-lovable)
+- [GitHub Integration](/integrations/github-integration)
+- [Secrets Management](/essentials/secrets)
+- [Understanding Plans](/plans/pricing-plans)
