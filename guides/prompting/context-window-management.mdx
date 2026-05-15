@@ -18,7 +18,7 @@ Softgen's AI model offers significant capabilities:
 - **Effective context handling**, making it capable with extensive conversations and numerous files.
 - **Good intent understanding** and fewer off-topic replies.
 
-While the AI is robust, the core principles of context management remain vital. As a general guideline, aim for a token count per AI message that keeps the AI focused and efficient—often in the **20k to 80k token range**. Consistently exceeding this by a large margin, especially with many files open, can still lead to the issues described above.
+While the AI is robust, the core principles of context management remain vital. As a general guideline, aim for a token count per AI message that keeps the AI focused and efficient, often in the **20k to 80k token range**. Consistently exceeding this by a large margin, especially with many files open, can still lead to the issues described above.
 
 This guide provides a playbook for managing your context effectively.
 
@@ -43,8 +43,8 @@ Softgen's **File Context Management** system gives you direct control over which
 **Strategy:**
 - **Monitor Token Counts with the AI Context Monitor:** Softgen displays the token count for each AI message along with a visual **Context Monitor** (a stoplight-style indicator). This provides an at-a-glance understanding of your current context health. While Softgen's AI is robust, consistently high token counts can still impact performance and clarity. The current thresholds are:
     - **🟢 Up to ~150k tokens (Green Zone):** Generally a healthy context size for most tasks. The AI should have good focus.
-    - **🟡 150k – 170k tokens (Yellow Zone):** High context usage. *Consider proactively closing any non-essential files using the File Context Management UI, or decide if it’s a good time to summarize for a new thread.*
-    - **🟠 170k – 190k tokens (Orange Zone):** Very high context usage. *Prune unneeded files now. If the task is complex and ongoing, this is a strong signal to use the "Summarize & Restart" pattern.*
+    - **🟡 150k - 170k tokens (Yellow Zone):** High context usage. *Consider proactively closing any non-essential files using the File Context Management UI, or decide if it’s a good time to summarize for a new thread.*
+    - **🟠 170k - 190k tokens (Orange Zone):** Very high context usage. *Prune unneeded files now. If the task is complex and ongoing, this is a strong signal to use the "Summarize & Restart" pattern.*
     - **🔴 190k+ tokens (Red Zone):** Extreme context usage. *Aggressively close all non-critical files or start a fresh thread with a concise summary.*
 
     If token counts are frequently in the yellow, orange, or red zones, or if AI performance degrades, your first step should always be to review and prune open files using the File Context Management UI.
@@ -107,7 +107,7 @@ Remember to save your most-used or customized prompts in **Agent Settings (gear 
 
 ## Accessing the Latest Features
 
-Softgen is continuously improving! Features like the AI Context Monitor roll out regularly in the app. For the latest capabilities, keep an eye on the in‑app changelog.
+Softgen is continuously improving! Features like the AI Context Monitor roll out regularly in the app. For the latest capabilities, keep an eye on the in-app changelog.
 
 ## When Things Go Wrong
 
