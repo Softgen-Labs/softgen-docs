@@ -1,0 +1,136 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Softgen.ai",
+  "colors": {
+    "primary": "#000000",
+    "light": "#FFFFFF",
+    "dark": "#000000"
+  },
+  "favicon": "/logo/softgen-symbol.svg",
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "introduction/welcome",
+              "introduction/capabilities",
+              "introduction/quick-start",
+              "introduction/stay-connected"
+            ]
+          },
+          {
+            "group": "User Guides",
+            "pages": [
+              "guides/getting-started",
+              "guides/step-by-step",
+              {
+                "group": "Prompting Strategies",
+                "pages": [
+                  "guides/prompting/basic-prompting",
+                  "guides/prompting/advanced-prompting",
+                  "guides/prompting/context-window-management"
+                ]
+              },
+              "guides/import-from-lovable",
+              "guides/deployment",
+              "guides/domain-connection",
+              "guides/stripe-payments",
+              "guides/team-collaboration"
+            ]
+          },
+          {
+            "group": "Developer Tools",
+            "pages": [
+              "developer-tools/network-debugging",
+              "developer-tools/console-debugging",
+              "developer-tools/frontend-vs-fullstack"
+            ]
+          },
+          {
+            "group": "Full Stack Development",
+            "pages": [
+              {
+                "group": "Supabase (New!)",
+                "pages": [
+                  "fullstack/supabase/supabase-onboarding"
+                ]
+              },
+              {
+                "group": "Firebase",
+                "pages": [
+                  "fullstack/firebase/firebase-onboarding",
+                  "fullstack/firebase/user-authentication",
+                  "fullstack/firebase/database-operations",
+                  "fullstack/firebase/realtime-applications",
+                  "fullstack/firebase/file-storage"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/import-from-github",
+              "integrations/github-integration"
+            ]
+          },
+          {
+            "group": "Plans & Pricing",
+            "pages": [
+              "plans/understanding-tokens",
+              "plans/pricing-plans",
+              "plans/legacy-pricing",
+              "plans/features-comparison",
+              "plans/membership",
+              "plans/wallet-and-billing"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "resources/how-it-works",
+              "resources/faq",
+              "resources/referrals-and-credits"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Blog",
+          "href": "https://softgen.ai/blog",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/Logo.svg",
+    "dark": "/logo/Logo-white.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://softgen.zendesk.com/hc/en-us/requests/new"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://softgen.ai"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/softgen-ai"
+    }
+  }
+}
