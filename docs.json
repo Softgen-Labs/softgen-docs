@@ -57,7 +57,8 @@
               {
                 "group": "Supabase (New!)",
                 "pages": [
-                  "fullstack/supabase/supabase-onboarding"
+                  "fullstack/supabase/supabase-onboarding",
+                  "fullstack/supabase/exporting-your-data"
                 ]
               },
               {
