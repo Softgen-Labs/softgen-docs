@@ -1,0 +1,83 @@
+---
+title: 'Exporting Your Data from Softgen'
+description: 'Export Supabase table data as CSV from Softgen Database console. Open a connected project, pick a table, and download on Pro.'
+---
+
+# Exporting Your Data
+
+When Supabase is connected to your Softgen project, you can export table data as CSV from the Database console. You can also import CSV into a table from the same view.
+
+CSV import and export are available on **Pro**.
+
+## Before You Start
+
+- Your project must have Supabase connected
+- You need a **Pro** plan for CSV import and export
+
+If Supabase is not connected yet, start with [Supabase Integration for Full Stack Apps](/fullstack/supabase/supabase-onboarding).
+
+<Frame>
+  <img src="/images/supabase-connect.png" alt="Connect to Supabase modal" />
+</Frame>
+
+## Open the Database Console
+
+The console is your project's **Database** tab. It is available only when Supabase is connected.
+
+Open it in either of these ways:
+
+1. Open your project and select the **Database** tab in the project navbar
+2. Or open the connected Supabase card and click **Open Console**
+
+<Frame>
+  <img src="/images/supabase-connected.png" alt="Connected Supabase project with Open Console" />
+</Frame>
+
+Either path opens your project with the Database tab active on the project page (`/project/{id}` with the Database tab selected).
+
+<Frame>
+  <img src="/images/supabase-database-console.png" alt="Softgen Database console showing tables" />
+</Frame>
+
+## Export a Table as CSV
+
+1. In the Database console, pick a table from the list
+2. Open the table view
+3. Click **Export CSV**
+4. While the file is preparing, the button shows **Exporting...**
+5. Softgen downloads a CSV file for that table
+
+Export builds the CSV in your browser from the table data.
+
+Empty tables still export. The CSV includes the column headers even when there are no rows, so the schema is in the header row.
+
+## Import CSV
+
+In the same table view, click **Import CSV**. While the import runs, the button shows **Importing...**.
+
+## Plan Requirements
+
+On plans below Pro, Softgen shows: **CSV import/export is available on Pro.**
+
+Upgrade to **Pro** to use export and import.
+
+## Common Questions
+
+### Why don't I see Export CSV?
+
+Confirm Supabase is connected, open the **Database** tab, and select a table. CSV import and export require **Pro**.
+
+### What if my table has no rows?
+
+You can still export. The CSV includes the column headers with no data rows.
+
+### Can I export more than one table at a time?
+
+Export downloads one table as CSV. Repeat the steps for each table you need.
+
+## Need Help?
+
+If you have questions about exporting your data:
+
+- **Email**: [support@softgen.ai](mailto:support@softgen.ai)
+- **Support Portal**: [https://softgen.zendesk.com/hc/en-us/requests/new](https://softgen.zendesk.com/hc/en-us/requests/new)
